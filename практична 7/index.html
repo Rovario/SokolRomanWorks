@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: #f4f4f4;
+        }
+        .note-form {
+            background-color: white;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+            margin-bottom: 20px;
+        }
+        .note-form input, 
+        .note-form textarea, 
+        .note-form select {
+            width: 100%;
+            margin-bottom: 10px;
+            padding: 8px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+        }
+        .notes-list {
+            display: grid;
+            gap: 15px;
+        }
+        .note-card {
+            background-color: white;
+            border-radius: 8px;
+            padding: 15px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+            position: relative;
+        }
+        .note-card .category {
+            color: #666;
+            font-size: 0.8em;
+            margin-bottom: 10px;
+        }
+        .note-actions {
+            display: flex;
+            gap: 10px;
+            margin-top: 10px;
+        }
+        .search-section {
+            display: flex;
+            gap: 10px;
+            margin-bottom: 20px;
+        }
+    </style>
+</head>
+<body>
+    <div class="note-form">
+        <h2>Додати нову нотатку</h2>
+        <input type="text" id="noteTitle" placeholder="Заголовок нотатки" required>
+        <textarea id="noteText" placeholder="Текст нотатки" required></textarea>
+        <select id="noteCategory">
+            <option value="">Оберіть категорію</option>
+            <option value="Робота">Робота</option>
+            <option value="Особисте">Особисте</option>
+            <option value="Навчання">Навчання</option>
+            <option value="Інше">Інше</option>
+        </select>
+        <button id="saveNote">Зберегти нотатку</button>
+    </div>
+
+    <div class="search-section">
+        <input type="text" id="searchInput" placeholder="Пошук нотаток">
+        <select id="categoryFilter">
+            <option value="">Всі категорії</option>
+            <option value="Робота">Робота</option>
+            <option value="Особисте">Особисте</option>
+            <option value="Навчання">Навчання</option>
+            <option value="Інше">Інше</option>
+        </select>
+        <button id="clearStorage">Очистити все</button>
+    </div>
+
+    <div id="notesList" class="notes-list"></div>
+
+
+
+
+
+    <script src="script.js"></script>
+</body>
+</html>
